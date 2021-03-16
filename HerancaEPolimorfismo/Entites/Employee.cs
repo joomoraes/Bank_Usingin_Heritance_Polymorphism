@@ -19,7 +19,7 @@ namespace HerancaEPolimorfismo.Entites
             ValuePerHour = valuePerHour;
         }
 
-        public double Payment()
+        public virtual double Payment()
         {
             return Hours * ValuePerHour;
         }
