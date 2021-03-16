@@ -6,6 +6,27 @@ namespace HerancaEPolimorfismo.Entites
 {
     class Employee
     {
+        //JAVA
+        private string name;
+        private int hour;
+
+        public Employee(string Name, int Hour)
+        {
+            this.Name = name;
+            this.hour = Hour;
+        }
+
+        public string getName()
+        {
+            return name;
+        }
+
+        public void Setname(string name)
+        {
+            name = Name;
+        }
+
+        // 888888
         public string Name { get; set; }
         public int Hours { get; set; }
         public double ValuePerHour { get; set; }
