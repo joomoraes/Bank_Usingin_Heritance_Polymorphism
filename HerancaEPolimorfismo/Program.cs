@@ -1,6 +1,7 @@
 ﻿using System;
 using HerancaEPolimorfismo.Entites;
 using System.Collections.Generic;
+using System.Globalization
 
 namespace HerancaEPolimorfismo
 {
@@ -21,7 +22,25 @@ namespace HerancaEPolimorfismo
                 Console.Write("Name: ");
                 string name = Console.ReadLine();
                 Console.Write("Hours: ");
-                int 
+                int hours = int.Parse(Console.ReadLine());
+                Console.WriteLine("Value per hour: ");
+                double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                if(ch == 'y')
+                {
+                    Console.WriteLine("Aditional charge: ");
+                    double additionalCharge = double.Parse(Console.ReadLine());
+                    list.Add(new OutSourcedEmployee(additionalCharge, name, hours, valuePerHour));
+                } else
+                {
+                    list.Add(new Employee(name, hours, valuePerHour));
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("PAYMENTS: ");
+            foreach(Employee emp in list)
+            {
+                Console.WriteLine(emp.Name + " - $ " + emp.Payment().ToString("F2", CultureInfo.InstalledUICulture));
             }
         }
     }
